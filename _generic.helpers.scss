@@ -21,6 +21,14 @@
 
 
 /**
+ * Text alignment
+ */
+.text--left     { text-align:left  !important; }
+.text--center   { text-align:center!important; }
+.text--right    { text-align:right !important; }
+
+
+/**
  * Add a help cursor to any element that gives the user extra information on
  * `:hover`.
  */
