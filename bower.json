@@ -12,7 +12,7 @@
     "helpers"
   ],
   "license": "Apache 2",
-  "homepage": "https://github.sw.ge.com/jrogerson/pdx-helpers.git",
+  "homepage": "git@github.sw.ge.com:jrogerson/pdx-helpers.git",
   "private": true,
   "ignore": [
     "**/.*",
