@@ -11,40 +11,55 @@
  * out over other selectors.
  */
 
-
 /**
  * Add/remove floats
  */
-.float--right   { float:right!important; }
-.float--left    { float:left !important; }
-.float--none    { float:none !important; }
 
+.float--right { 
+    float:right!important;
+}
+
+.float--left {
+  float:left!important;
+}
+
+.float--none {
+  float:none!important;
+}
 
 /**
  * Text alignment
  */
-.text--left     { text-align:left  !important; }
-.text--center   { text-align:center!important; }
-.text--right    { text-align:right !important; }
+ 
+.text--left {
+  text-align:left!important;
+}
 
+.text--center {
+  text-align:center!important;
+}
+
+.text--right {
+  text-align:right!important;
+}
 
 /**
  * Add a help cursor to any element that gives the user extra information on
  * `:hover`.
  */
-.informative{
-    cursor:help!important;
+ 
+.informative {
+  cursor: help!important;
 }
-
 
 /**
  * Mute an object by reducing its opacity.
  */
-.muted{
-    opacity:0.5!important;
-    filter:alpha(opacity = 50)!important;
+ 
+.muted {
+ opacity: 0.5!important;
+ filter: alpha(opacity = 50)!important;
 }
-
 
 /**
  * Align items to the right where they imply progression/movement forward, e.g.:
@@ -52,8 +67,9 @@
    <p class=proceed><a href=#>Read more...</a></p>
  *
  */
-.proceed{
-    text-align:right!important;
+
+.proceed {
+  text-align: right!important;
 }
 
 /**
@@ -62,65 +78,80 @@
    <a href=# class=go>Read more</a>
  *
  */
-.go:after{
-    content:"\00A0" "\00BB"!important;
-}
 
+.go:after {
+  font-family: FontAwesome;
+  content: $fa-var-angle-double-right!important;
+}
 
 /**
  * Apply capital case to an element (usually a `strong`).
  */
-.caps{
-    text-transform:uppercase!important;
+
+.caps {
+  text-transform: uppercase!important;
 }
 
 /**
  * Hide visually and from screen readers:
  * http://juicystudio.com/article/screen-readers-display-none.php
  */
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
 
+.hidden {
+  display: none!important;
+  visibility: hidden;
+}
 
 /**
  * Hide content off-screen without resorting to `display:none;`
  */
-@mixin accessibility{
-    border:0!important;
-    clip:rect(0 0 0 0)!important;
-    height:1px!important;
-    margin:-1px!important;
-    overflow:hidden!important;
-    padding:0!important;
-    position: absolute!important;
-    width:1px!important;
-}
-.a11y,
-.visuallyhidden{
-    @include accessibility;
+
+@mixin accessibility {
+  position: absolute!important;
+  overflow: hidden!important;
+  width: 1px!important;
+  height: 1px!important;
+  margin: -1px!important;
+  border: 0!important;
+  padding: 0!important;
+  clip: rect(0 0 0 0)!important;
 }
 
-.ally,
+.a11y,
 .visuallyhidden{
-  &.focusable{
-    &:active,&:focus{
-      clip: auto;
+  @include accessibility;
+}
+
+.a11y,
+.visuallyhidden {
+  &.focusable {
+    &:active,&:focus {
+      position: static;
+      overflow: visible;
+      width: auto;
       height: auto;
       margin: 0;
-      overflow: visible;
-      position: static;
-      width: auto;
+      clip: auto;
     }
   }
 }
 
+@if $inuit-responsive-settings {
+  @each $breakpoint in $breakpoints {
+    $alias: nth($breakpoint, 1);
+    @include media-query($alias) {
+      .a11y-#{$alias},
+      .visuallyhidden-#{$alias} {
+        @include accessibility;
+      }
+    }
+  }
+}
 
 /**
  * Hide visually and from screen readers, but maintain layout
  */
 
 .invisible {
-    visibility: hidden;
+  visibility: hidden;
 }
