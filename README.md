@@ -1,4 +1,4 @@
-pdx-helpers
+px-helpers
 ===========
 
-Common helper styles for Predix Design Extension
+Common helper styles for Predix Experience

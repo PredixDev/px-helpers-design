@@ -1,10 +1,10 @@
 {
-  "name": "pdx-helpers",
+  "name": "px-helpers",
   "version": "0.0.1",
   "authors": [
     "General Electric"
   ],
-  "description": "Common helper styles for Predix Design Extension",
+  "description": "Common helper styles for Predix Experience",
   "main": "_generic.helpers.scss",
   "keywords": [
     "pdx",
@@ -12,7 +12,7 @@
     "helpers"
   ],
   "license": "Apache 2",
-  "homepage": "git@github.sw.ge.com:jrogerson/pdx-helpers.git",
+  "homepage": "git://github.sw.ge.com/jrogerson/px-helpers.git",
   "private": true,
   "ignore": [
     "**/.*",
