@@ -11,151 +11,155 @@
  * out over other selectors.
  */
 
-
 @import "lib/inuit-responsive-settings/settings.responsive";
-@import "lib/px-typography/sass/base.typography";
+@import "lib/px-responsive-tools/sass/tools.responsive";
+@import "lib/px-iconography/sass/base.iconography";
 
-/**
- * Add/remove floats
- */
+@if import-once('generic.helpers') {
 
-.float--right { 
-    float:right!important;
-}
-
-.float--left {
-  float:left!important;
-}
-
-.float--none {
-  float:none!important;
-}
-
-/**
- * Text alignment
- */
- 
-.text--left {
-  text-align:left!important;
-}
-
-.text--center {
-  text-align:center!important;
-}
-
-.text--right {
-  text-align:right!important;
-}
-
-/**
- * Add a help cursor to any element that gives the user extra information on
- * `:hover`.
- */
- 
-.informative {
-  cursor: help!important;
-}
-
-/**
- * Mute an object by reducing its opacity.
- */
- 
-.muted {
- opacity: 0.5!important;
- filter: alpha(opacity = 50)!important;
-}
-
-/**
- * Align items to the right where they imply progression/movement forward, e.g.:
- *
-   <p class=proceed><a href=#>Read more...</a></p>
- *
- */
-
-.proceed {
-  text-align: right!important;
-}
-
-/**
- * Add a right-angled quote to links that imply movement, e.g.:
- *
-   <a href=# class=go>Read more</a>
- *
- */
-
-.go:after {
-  font-family: FontAwesome;
-  content: $fa-var-angle-double-right!important;
-}
-
-/**
- * Apply capital case to an element (usually a `strong`).
- */
-
-.caps {
-  text-transform: uppercase!important;
-}
-
-/**
- * Hide visually and from screen readers:
- * http://juicystudio.com/article/screen-readers-display-none.php
- */
-
-.hidden {
-  display: none!important;
-  visibility: hidden;
-}
-
-/**
- * Hide content off-screen without resorting to `display:none;`
- */
-
-@mixin accessibility {
-  position: absolute!important;
-  overflow: hidden!important;
-  width: 1px!important;
-  height: 1px!important;
-  margin: -1px!important;
-  border: 0!important;
-  padding: 0!important;
-  clip: rect(0 0 0 0)!important;
-}
-
-.a11y,
-.visuallyhidden{
-  @include accessibility;
-}
-
-.a11y,
-.visuallyhidden {
-  &.focusable {
-    &:active,&:focus {
-      position: static;
-      overflow: visible;
-      width: auto;
-      height: auto;
-      margin: 0;
-      clip: auto;
-    }
+  /**
+   * Add/remove floats
+   */
+  
+  .float--right {
+    float: right!important;
   }
-}
-
-@if $inuit-responsive-settings {
-  @each $breakpoint in $breakpoints {
-    $alias: nth($breakpoint, 1);
-    @include media-query($alias) {
-      .a11y-#{$alias},
-      .visuallyhidden-#{$alias} {
-        @include accessibility;
+  
+  .float--left {
+    float: left!important;
+  }
+  
+  .float--none {
+    float: none!important;
+  }
+  
+  /**
+   * Text alignment
+   */
+   
+  .text--left {
+    text-align: left!important;
+  }
+  
+  .text--center {
+    text-align: center!important;
+  }
+  
+  .text--right {
+    text-align: right!important;
+  }
+  
+  /**
+   * Add a help cursor to any element that gives the user extra information on
+   * `:hover`.
+   */
+   
+  .informative {
+    cursor: help!important;
+  }
+  
+  /**
+   * Mute an object by reducing its opacity.
+   */
+   
+  .muted {
+   opacity: 0.5!important;
+   filter: alpha(opacity = 50)!important;
+  }
+  
+  /**
+   * Align items to the right where they imply progression/movement forward, e.g.:
+   *
+     <p class=proceed><a href=#>Read more...</a></p>
+   *
+   */
+  
+  .proceed {
+    text-align: right!important;
+  }
+  
+  /**
+   * Add a right-angled quote to links that imply movement, e.g.:
+   *
+     <a href=# class=go>Read more</a>
+   *
+   */
+  
+  .go:after {
+    font-family: FontAwesome;
+    content: $fa-var-angle-double-right!important;
+  }
+  
+  /**
+   * Apply capital case to an element (usually a `strong`).
+   */
+  
+  .caps {
+    text-transform: uppercase!important;
+  }
+  
+  /**
+   * Hide visually and from screen readers:
+   * http://juicystudio.com/article/screen-readers-display-none.php
+   */
+  
+  .hidden {
+    display: none!important;
+    visibility: hidden;
+  }
+  
+  /**
+   * Hide content off-screen without resorting to `display:none;`
+   */
+  
+  @mixin accessibility {
+    position: absolute!important;
+    overflow: hidden!important;
+    width: 1px!important;
+    height: 1px!important;
+    margin: -1px!important;
+    border: 0!important;
+    padding: 0!important;
+    clip: rect(0 0 0 0)!important;
+  }
+  
+  .a11y,
+  .visuallyhidden{
+    @include accessibility;
+  }
+  
+  .a11y,
+  .visuallyhidden {
+    &.focusable {
+      &:active,&:focus {
+        position: static;
+        overflow: visible;
+        width: auto;
+        height: auto;
+        margin: 0;
+        clip: auto;
       }
     }
   }
-}
+  
+  @if $inuit-responsive-settings {
+    @each $breakpoint in $breakpoints {
+      $alias: nth($breakpoint, 1);
+      @include media-query($alias) {
+        .a11y-#{$alias},
+        .visuallyhidden-#{$alias} {
+          @include accessibility;
+        }
+      }
+    }
+  }
+  
+  /**
+   * Hide visually and from screen readers, but maintain layout
+   */
+  
+  .invisible {
+    visibility: hidden;
+  }
 
-/**
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
 }
