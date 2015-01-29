@@ -22,7 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "inuit-responsive-settings": "~0.1.3",
-    "px-iconography": "git://github.sw.ge.com/jrogerson/px-iconography.git#master"
+    "px-iconography": "git://github.sw.ge.com/jrogerson/px-iconography.git#master",
+    "px-responsive-tools": "git://github.sw.ge.com/jrogerson/px-responsive-tools.git#master"
   }
 }
