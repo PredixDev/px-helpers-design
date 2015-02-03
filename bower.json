@@ -22,7 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "px-iconography": "git://github.sw.ge.com/jrogerson/px-iconography.git#master",
-    "px-responsive-tools": "git://github.sw.ge.com/jrogerson/px-responsive-tools.git#master"
+    "inuit-responsive-tools": "~0.1.3",
+    "px-iconography": "git://github.sw.ge.com/jrogerson/px-iconography.git#master"
   }
 }
