@@ -7,7 +7,7 @@
   "description": "Common helper styles for Predix Experience",
   "main": "_generic.helpers.scss",
   "keywords": [
-    "pdx",
+    "px",
     "sass",
     "helpers"
   ],
