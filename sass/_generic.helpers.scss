@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    #PX-HELPERS
+    #PX-HELPERS-DESIGN
 \*------------------------------------*/
 
 /**
@@ -14,7 +14,7 @@
 
 @import "inuit-responsive-settings/settings.responsive";
 @import "inuit-responsive-tools/tools.responsive";
-@import "px-iconography/sass/base.iconography";
+@import "px-iconography-design/sass/base.iconography";
 
 @if import-once('generic.helpers') {
 
