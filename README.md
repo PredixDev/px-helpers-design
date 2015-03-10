@@ -4,7 +4,7 @@ A series of helper classes to use arbitrarily in Predix Experience.
 
 ## Dependencies
 
-Px's Tables module depends on three other Px and inuitcss modules:
+Px's Helpers module depends on three other Px and inuitcss modules:
 
 * [tools.responsive](https://github.com/inuitcss/tools.responsive)
 * [px-functions-design](https://github.sw.ge.com/pxc/px-functions-design)
