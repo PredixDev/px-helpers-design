@@ -15,7 +15,6 @@
 @import "../inuit-responsive-settings/settings.responsive";
 @import "../px-functions-design/tools.functions";
 @import "../inuit-responsive-tools/tools.responsive";
-@import "../px-iconography-design/base.iconography";
 
 @if import-once('generic.helpers') {
 
@@ -78,18 +77,6 @@
   
   .proceed {
     text-align: right!important;
-  }
-  
-  /**
-   * Add a right-angled quote to links that imply movement, e.g.:
-   *
-     <a href=# class=go>Read more</a>
-   *
-   */
-  
-  .go:after {
-    font-family: FontAwesome;
-    content: $fa-var-angle-double-right!important;
   }
   
   /**
