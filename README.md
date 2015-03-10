@@ -8,7 +8,6 @@ Px's Tables module depends on three other Px and inuitcss modules:
 
 * [tools.responsive](https://github.com/inuitcss/tools.responsive)
 * [px-functions-design](https://github.sw.ge.com/pxc/px-functions-design)
-* [px-iconography-design](https://github.sw.ge.com/pxc/px-iconography-design)
 
 ## Installation
 
