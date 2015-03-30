@@ -7,19 +7,19 @@ A series of helper classes to use arbitrarily in Predix Experience.
 Px's Helpers module depends on three other Px and inuitcss modules:
 
 * [tools.responsive](https://github.com/inuitcss/tools.responsive)
-* [px-functions-design](https://github.sw.ge.com/pxc/px-functions-design)
+* [px-functions-design](https://github.sw.ge.com/PXd/px-functions-design)
 
 ## Installation
 
 Install this module and its dependencies using bower:
 
-    bower install --save https://github.sw.ge.com/pxc/px-helpers-design.git
+    bower install --save https://github.sw.ge.com/PXd/px-helpers-design.git
 
 Once installed, `@import` into your project's Sass file in its Generic layer:
 
     @import "../px-helpers-design/generic.helpers";
 
-See [px-getting-started](https://github.sw.ge.com/pxc/px-getting-started#a-note-about-relative-import-paths) for an explanation of the `../`
+See [px-getting-started](https://github.sw.ge.com/PXd/px-getting-started#a-note-about-relative-import-paths) for an explanation of the `../`
 
 ## Import once
 
