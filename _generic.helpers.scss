@@ -1,6 +1,8 @@
-/*------------------------------------*\
-    #PX-HELPERS-DESIGN
-\*------------------------------------*/
+////
+/// PX-HELPERS-DESIGN
+/// Defines generic helpers styles
+/// @group px-helpers-design
+////
 
 /**
  * A series of helper classes to use arbitrarily. Only use a helper class if an
@@ -16,6 +18,28 @@
 @import "../px-functions-design/tools.functions";
 @import "../inuit-responsive-tools/tools.responsive";
 
+/// @name accessibility
+/// @output Properties and values for hiding elements accessibly
+/// @example
+///   position: absolute !important;
+///   overflow: hidden !important;
+///   width: 1px !important;
+///   height: 1px !important;
+///   margin: -1px !important;
+///   border: 0 !important;
+///   padding: 0 !important;
+///   clip: rect(0 0 0 0) !important;
+@mixin accessibility {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  clip: rect(0 0 0 0) !important;
+}
+
 @if import-once('generic.helpers') {
 
   /**
@@ -23,15 +47,15 @@
    */
   
   .float--right {
-    float: right!important;
+    float: right !important;
   }
   
   .float--left {
-    float: left!important;
+    float: left !important;
   }
   
   .float--none {
-    float: none!important;
+    float: none !important;
   }
   
   /**
@@ -39,15 +63,15 @@
    */
    
   .text--left {
-    text-align: left!important;
+    text-align: left !important;
   }
   
   .text--center {
-    text-align: center!important;
+    text-align: center !important;
   }
   
   .text--right {
-    text-align: right!important;
+    text-align: right !important;
   }
   
   /**
@@ -64,7 +88,7 @@
    */
    
   .informative {
-    cursor: help!important;
+    cursor: help !important;
   }
   
   /**
@@ -72,8 +96,7 @@
    */
    
   .muted {
-   opacity: 0.5!important;
-   filter: alpha(opacity = 50)!important;
+   opacity: 0.5 !important;
   }
   
   /**
@@ -84,7 +107,7 @@
    */
   
   .proceed {
-    text-align: right!important;
+    text-align: right !important;
   }
   
   /**
@@ -92,7 +115,7 @@
    */
   
   .caps {
-    text-transform: uppercase!important;
+    text-transform: uppercase !important;
   }
   
   /**
@@ -101,24 +124,13 @@
    */
   
   .hidden {
-    display: none!important;
+    display: none !important;
     visibility: hidden;
   }
   
   /**
    * Hide content off-screen without resorting to `display:none;`
    */
-  
-  @mixin accessibility {
-    position: absolute!important;
-    overflow: hidden!important;
-    width: 1px!important;
-    height: 1px!important;
-    margin: -1px!important;
-    border: 0!important;
-    padding: 0!important;
-    clip: rect(0 0 0 0)!important;
-  }
   
   .a11y,
   .visuallyhidden{
@@ -156,7 +168,7 @@
    */
   
   .invisible {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
 }
