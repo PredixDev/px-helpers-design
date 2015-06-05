@@ -2,24 +2,38 @@
 
 A series of helper classes to use arbitrarily in Predix Experience.
 
+## Demo
+
+You can review button styles and recommended markup and required classes here: https://github.build.ge.com/pages/PXd/px-helpers-design
+
+## Sass Documentation
+
+You can review Sass Documentation here: https://github.build.ge.com/pages/PXd/px-helpers-design/sassdoc
+
 ## Dependencies
 
-Px's Helpers module depends on three other Px and inuitcss modules:
+Px's Helpers module depends on one other Px and one other inuitcss modules:
 
 * [tools.responsive](https://github.com/inuitcss/tools.responsive)
-* [px-functions-design](https://github.sw.ge.com/PXd/px-functions-design)
+* [px-functions-design](https://github.build.ge.com/PXd/px-functions-design)
+
+## Upstream dependency
+
+The Helpers module is also an upstream dependency in this meta kit:
+
+* [px-starter-kit-design](https://github.build.ge.com/PXd/px-starter-kit-design)
 
 ## Installation
 
 Install this module and its dependencies using bower:
 
-    bower install --save https://github.sw.ge.com/PXd/px-helpers-design.git
+    bower install --save https://github.build.ge.com/PXd/px-helpers-design.git
 
 Once installed, `@import` into your project's Sass file in its Generic layer:
 
     @import "../px-helpers-design/generic.helpers";
 
-See [px-getting-started](https://github.sw.ge.com/PXd/px-getting-started#a-note-about-relative-import-paths) for an explanation of the `../`
+See [px-getting-started](https://github.build.ge.com/PXd/px-getting-started#a-note-about-relative-import-paths) for an explanation of the `../`
 
 ## Import once
 
