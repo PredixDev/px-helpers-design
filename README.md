@@ -4,7 +4,7 @@ A series of helper classes to use arbitrarily in Predix Experience.
 
 ## Demo
 
-You can review button styles and recommended markup and required classes here: https://github.build.ge.com/pages/PXd/px-helpers-design
+You can review the use of some helper classes here: https://github.build.ge.com/pages/PXd/px-helpers-design
 
 ## Sass Documentation
 
