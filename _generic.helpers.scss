@@ -14,9 +14,8 @@
  * out over other selectors.
  */
 
-@import "../inuit-responsive-settings/settings.responsive";
-@import "../px-functions-design/tools.functions";
-@import "../inuit-responsive-tools/tools.responsive";
+@import "inuit-responsive-settings/_settings.responsive.scss";
+@import "inuit-responsive-tools/_tools.responsive.scss";
 
 /// @name accessibility
 /// @output Properties and values for hiding elements accessibly
@@ -40,135 +39,131 @@
   clip: rect(0 0 0 0) !important;
 }
 
-@if import-once('generic.helpers') {
+/**
+ * Add/remove floats
+ */
 
-  /**
-   * Add/remove floats
-   */
-  
-  .float--right {
-    float: right !important;
+.float--right {
+  float: right !important;
+}
+
+.float--left {
+  float: left !important;
+}
+
+.float--none {
+  float: none !important;
+}
+
+/**
+ * Text alignment
+ */
+ 
+.text--left {
+  text-align: left !important;
+}
+
+.text--center {
+  text-align: center !important;
+}
+
+.text--right {
+  text-align: right !important;
+}
+
+/**
+ * Full height element
+ */
+ 
+.full-height {
+  height: 100% !important;
+}
+
+/**
+ * Add a help cursor to any element that gives the user extra information on
+ * `:hover`.
+ */
+ 
+.informative {
+  cursor: help !important;
+}
+
+/**
+ * Mute an object by reducing its opacity.
+ */
+ 
+.muted {
+ opacity: 0.5 !important;
+}
+
+/**
+ * Align items to the right where they imply progression/movement forward, e.g.:
+ *
+   <p class=proceed><a href=#>Read more...</a></p>
+ *
+ */
+
+.proceed {
+  text-align: right !important;
+}
+
+/**
+ * Apply capital case to an element (usually a `strong`).
+ */
+
+.caps {
+  text-transform: uppercase !important;
+}
+
+/**
+ * Hide visually and from screen readers:
+ * http://juicystudio.com/article/screen-readers-display-none.php
+ */
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/**
+ * Hide content off-screen without resorting to `display:none;`
+ */
+
+.a11y,
+.visuallyhidden{
+  @include accessibility;
+}
+
+.a11y,
+.visuallyhidden {
+  &.focusable {
+    &:active,&:focus {
+      position: static;
+      overflow: visible;
+      width: auto;
+      height: auto;
+      margin: 0;
+      clip: auto;
+    }
   }
-  
-  .float--left {
-    float: left !important;
-  }
-  
-  .float--none {
-    float: none !important;
-  }
-  
-  /**
-   * Text alignment
-   */
-   
-  .text--left {
-    text-align: left !important;
-  }
-  
-  .text--center {
-    text-align: center !important;
-  }
-  
-  .text--right {
-    text-align: right !important;
-  }
-  
-  /**
-   * Full height element
-   */
-   
-  .full-height {
-    height: 100% !important;
-  }
-  
-  /**
-   * Add a help cursor to any element that gives the user extra information on
-   * `:hover`.
-   */
-   
-  .informative {
-    cursor: help !important;
-  }
-  
-  /**
-   * Mute an object by reducing its opacity.
-   */
-   
-  .muted {
-   opacity: 0.5 !important;
-  }
-  
-  /**
-   * Align items to the right where they imply progression/movement forward, e.g.:
-   *
-     <p class=proceed><a href=#>Read more...</a></p>
-   *
-   */
-  
-  .proceed {
-    text-align: right !important;
-  }
-  
-  /**
-   * Apply capital case to an element (usually a `strong`).
-   */
-  
-  .caps {
-    text-transform: uppercase !important;
-  }
-  
-  /**
-   * Hide visually and from screen readers:
-   * http://juicystudio.com/article/screen-readers-display-none.php
-   */
-  
-  .hidden {
-    display: none !important;
-    visibility: hidden;
-  }
-  
-  /**
-   * Hide content off-screen without resorting to `display:none;`
-   */
-  
-  .a11y,
-  .visuallyhidden{
-    @include accessibility;
-  }
-  
-  .a11y,
-  .visuallyhidden {
-    &.focusable {
-      &:active,&:focus {
-        position: static;
-        overflow: visible;
-        width: auto;
-        height: auto;
-        margin: 0;
-        clip: auto;
+}
+
+@if $inuit-responsive-settings {
+  @each $breakpoint in $breakpoints {
+    $alias: nth($breakpoint, 1);
+    @include media-query($alias) {
+      .a11y-#{$alias},
+      .visuallyhidden-#{$alias} {
+        @include accessibility;
       }
     }
   }
-  
-  @if $inuit-responsive-settings {
-    @each $breakpoint in $breakpoints {
-      $alias: nth($breakpoint, 1);
-      @include media-query($alias) {
-        .a11y-#{$alias},
-        .visuallyhidden-#{$alias} {
-          @include accessibility;
-        }
-      }
-    }
-  }
-  
-  /**
-   * Hide visually and from screen readers, but maintain layout
-   */
-  
-  .invisible {
-    visibility: hidden !important;
-  }
+}
 
+/**
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden !important;
 }
