@@ -2,13 +2,10 @@
 
 A series of helper classes to use arbitrarily in Predix Experience.
 
-## Demo
 
-You can review the use of some helper classes here: https://github.com/pages/PredixDev/px-helpers-design
 
-## Sass Documentation
 
-You can review Sass Documentation here: https://github.com/pages/PredixDev/px-helpers-design/sassdoc
+
 
 ## Dependencies
 
