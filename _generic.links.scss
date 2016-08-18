@@ -1,0 +1,42 @@
+////
+/// PX-HELPERS-DESIGN
+/// Defines generic helpers styles
+/// @group px-helpers-design
+////
+
+@import "px-colors-design/_settings.colors.scss";
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+
+/**
+ * Default link colors
+ */
+ 
+  &:link,
+  &:visited {
+    color: $primary-blue;
+  }
+  
+  &:hover {
+    color: $primary-blue-hover;
+  }
+  
+  &:active {
+    color: $primary-blue-pressed;
+  }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+
+}
