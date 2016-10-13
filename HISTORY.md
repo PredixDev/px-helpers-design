@@ -1,4 +1,8 @@
-v0.3.6 
+v0.3.7
+==============================
+* added pointer class
+
+v0.3.6
 ==============================
 * added new demo and auto-ghp
 
