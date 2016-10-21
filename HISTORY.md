@@ -1,3 +1,7 @@
+v0.3.9
+==============================
+* removed --strip-comments from ghp.sh
+
 v0.3.8
 ==============================
 * added mega demo
