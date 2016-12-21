@@ -4,20 +4,28 @@ language: node_js
 node_js:
 - stable
 branches:
-  only:
-  - master
+  except:
+  - gh-pages
+addons:
+  firefox: latest
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
 before_script:
 - npm install bower
 - export PATH=$PWD/node_modules/.bin:$PATH
 - bower install
 script:
+- echo "This design module has no tests"
+after_success:
+- if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then openssl aes-256-cbc -k "$DEPLOYSECRET"
+  -in deploy.enc -out deploy_key -d; fi
 - cd $TRAVIS_BUILD_DIR/scripts
 - chmod 755 ghp.sh
-- ./ghp.sh
-before_install:
-- if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then openssl aes-256-cbc -k "$password"
-  -in id_rsa.enc -out deploy_key -d; fi
+- "./ghp.sh"
 env:
   global:
-  - secure: lxFcEbX9TJSwZsjByPX6aK1F0gqWYMnliSYn19MdnyA5Xlsrk590QO3v0sJD1gK4NIrTkE83pxCAElqQ5L2kmuTPRP+xEebFT92K1odZr0nuAkTnlpuB0P8713K+J3qXNPI6bQ3kbRdJbm/7nh0ub9/gz4Mw1G2HpbyYL9iVKWO+bg2eCKP441hgISeAioGost+yybGqNF6mW6dVvSfPaL5xhwT6Te06Kk/ZlCJO96fhyvLwMzL2Bx+S9jdVgpk+JVoFPX4ex+8PHuUbUinvkoQL6dDgSA0yvWfSJpALonQZbtZdYhjk3mIoMTcd3mhsCtSYTyUEw4x+L6LH1H5g7rd6rXFf+SjtYNP+rxU4U1Nd78a5q9xnXufgaeAl8swWSJugEYKetmD0b2hQxnkAdhKswV2RfwQ0V2NY2eKSzGr5BSp3u7BN07qlBgOhBfw/W1lprtwJFWUShWdnQF3W/u9AEKiUQGyOBcWvHM63GI8IHKEhhMb6Y6ePdeK4VqOCNMFWmI8OPKbBO0joL9QBs85Ej/svlDJM5Tg2rVzf/DLxYFjfN9IFpseVXtus0qxQOy7LX9+wnICJsBKmL6e9FVEcLnnx0cF0W8qvbuYKNXYYXrCMkQdCQ893j837Z7YVsVq2MRL3CrVx1EiiDZ/F4cV6X44eay+RyWo07QxIEaE=
-  - secure: p2l/KEqkGrHzrc+njQWy3ONj+yR41I4zfNhMaLhdxC8Y1kiqJ7zUFQWzBpNiJO81nC8V16mkw5XiUkV6TSP1IQSoWjum2lYp+qMOMFw/0JEgz/QoPbLlIMc3O0a5AB9q3ydOzvMgIfkH7XFw2DhKO9MMduD+WHzciwKvjCXEUjkX+glAMJrw+MvW3gqrGc7nVskKdAW9JJhiXrzl7HChrUY2jqABvk1SYZfSvXZMHCQYTKJhtqSjLUdxyL6/tJ7bhhJutISlD+DHUcACsR04C1VjVWRPe0vlvhy2xmUS1GbVesz0knqyWERUxqXyJFPGsKU2UlCKkNXdSlFjQWk6m+dogRzQoHu6MmT0Zn3Vyl3Q6qiNqrYEmmAURsJJJgUPnQ4ngDGESW3S8lCSgFyxr36TCuYOTLTpDoxy+cbBAGbEMQIQT/4vpcicchdp5RZnO9kZes21b6WeuJOiJ384+1noj72LfmymtFImvryJawGta7jUlRJ8cDAzbY9Ev0V6oDvNbgdv/kjgKZEgUa/utRfnn+04WucY3zO6frmKQTYDavbIZJD7D63HYu1/Crm5296Nn+N/iopiu6AiEPDShogxD5vZ4Jzk3fh53pgLHl6zI5kqbMHEp0Pik44iWhLs7q2lFUTZwJYFmfhDJkkZekCn43klg4+5ELrZ1h9Q1mU=
+  - secure: xy4GgyYK0pomLoNqUZdmkGKMIRuRIm5V4jkLXtGdQStxNj2jR2XD5wCx6PKxmA+qYSeiOwmwFfYGhXD1b0ih98LxcVnlpDEDI2hCX70688rorAXUTMkpSCgpXEmSE2UordGL6HLKHcxpcAu/Dw2b+rplVreWqF6UhLgNal2a4ZHxOkvjlvr9rrgubFMyhpxYLLQyTxerIx3vn7761GbDJdAFTrdiMT7AIyJ1/H5lNuRKw9tD45TBz+xSku1yGcImZ8puTHs1PKgHk23Q6XmuemvVXZs1PG3GR/4c7zbJVv1JGFpp0BedC5rfIOqHIk5W6qqz8WPmZRURfrR/NkfjATZNLYYwQnVdAx0l5LrjsZ1jYijZ0ODe6Vw0I/VNJ2E390IYWsAd5t3/FjHrHOfYbH6pA7oYG7BuOKwCAHldD9X7HxAgxhx53S1QKHHeNGjSPazeA4eLSGWqGTPpSD+nJgLBiw7+4SyvvMFM2quhfb4XWIXIw/Bfdo+PoVKmoqUge1Hv6+Hk999uLXDFweQby1MjyYhW4SeWs/I8F92yIyCQ4juWaimgdAKlOuA4+QSkVbFMCvTi1iPpkMHghxzRh4a0a/2IQgtrkT5GSdSgrjU82hstAtatO5KMRZ4I4vYcnliubkdUSqG06q/mfXrO5DEU4XShhpxDRn19O00yR1g=
+  - secure: Ge9myqDkOgsoXdYTsS19zztYOoI4Q2g+2VFiJrl/hfAxan3VWaRs92UH0s4pTPSDt0aBbD0eAzecdtDXrCtFUat1QffAjDvpcQNH8Pg1zPuWF8yOgOZ4b8VsuARxM/mET2cOKK0sVTwe8MP7UckPpiitP1ubLfapXgheosDtzFWT7OQQqrZ4Kc6nHFsZlulzlq5mJ5i3jFXoMxlHq5Dvpqtk6kNZiTuVsw09JymuqYjFe0VKXMtcC665zYXJ8SIiQ2VmOtChf00wpcZSnIwiJS6sujGugcun0xs6adOYMCvJe0VhUt44oXAxof7lBAX8a3Fz2m9bC5uN4+OIyh8FTfhLXQVAHPgiIkYmYyaCy7rnxjOUe6iAPL6AeEf0oNqf+eg2KfwXj+7j/EDLNakXMpjj68D1rliF+k8APgsaetgucEFwSw9AqzU5LD4ZDkUtPeB9pnDcmNKg3Upkinlb18NXxNyTDw3d7C2+HRoKVyVI04IUpE1+U2yABoGKR9DafNoXiTq+lyw3J8W2y7c+GGmIi6Bh+/I7lnbrLEOR9vtnMjaGgPPHqpA5brRqQZdks3ONXBP4KZqBRYPjv4P5dtdRJUNnOgdPOO+F60o8CFAkk87GhwW4MBBCPA7afZC1pAPskUDKyj/fCMel1BZUC0XhunyQgLejhnVdPRwrfmY=
