@@ -34,6 +34,12 @@ PAGE. IT SHOULD NOT PROVIDE RULES FOR THE MODULE.
 
 // Component
 
+.boxContainer{
+  line-height:40px;
+  background-color: var(--px-helpers-demo-box, $gray4);
+  width:200px;
+  padding: 5px 10px;
+}
 
 // Trumps
 @import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
