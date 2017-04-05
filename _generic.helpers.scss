@@ -56,15 +56,15 @@ a {
 
   &:link,
   &:visited {
-    color: $primary-blue;
+    color: $primary-default;
   }
 
   &:hover {
-    color: $primary-blue-hover;
+    color: $primary-hover;
   }
 
   &:active {
-    color: $primary-blue-pressed;
+    color: $primary-pressed;
   }
 
 /**

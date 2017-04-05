@@ -1,3 +1,7 @@
+v1.0.0
+==================
+* Release the with the redesigned Predix UI color palette
+
 v0.3.20
 ==================
 * updated to new demo using px-demo classes
