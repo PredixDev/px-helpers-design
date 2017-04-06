@@ -1,3 +1,7 @@
+v1.0.1
+==================
+* Bump sub dependencies
+
 v1.0.0
 ==================
 * Release the with the redesigned Predix UI color palette
