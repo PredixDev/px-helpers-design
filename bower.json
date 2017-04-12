@@ -30,7 +30,7 @@
   ],
   "dependencies": {
     "inuit-responsive-tools": "~0.1.3",
-    "px-colors-design": "^1.0.1",
+    "px-colors-design": "^1.0.0",
     "inuit-responsive-settings": "^0.1.5"
   },
   "devDependencies": {
