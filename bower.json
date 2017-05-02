@@ -35,6 +35,7 @@
     "inuit-responsive-settings": "^0.1.5"
   },
   "devDependencies": {
-    "px-sass-doc": "^1.0.0"
+    "px-sass-doc": "^1.0.0",
+    "px-starter-kit-design": "^1.0.0"
   }
 }
