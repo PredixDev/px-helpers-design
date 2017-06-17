@@ -78,6 +78,10 @@
   choose-with="boolean">
 </px-sass-doc-option>
 <px-sass-doc-option
+  option-name="Truncate"
+  choose-with="boolean">
+</px-sass-doc-option>
+<px-sass-doc-option
   option-name="Proceed"
   choose-with="boolean">
 </px-sass-doc-option>
@@ -164,6 +168,9 @@ A lot of these classes carry `!important` as you will always want them to win ou
 <!-- Apply capital case to an element -->
 <div class="caps">...</div>
 
+<!-- Truncated Text: -->
+<!-- Truncate a text string using an ellipsis -->
+<div class="truncate">...</div>
 
 <!-- Proceed: -->
 <!-- Align items to the right where they imply progression/movement forward -->
@@ -223,6 +230,7 @@ A lot of these classes carry `!important` as you will always want them to win ou
 
       if (opts["Muted Text"] === true)    strings.push("muted");
       if (opts["All Caps"] === true)    strings.push("caps");
+      if (opts["Truncate"] === true)    strings.push("truncate");
       if (opts["Proceed"] === true)    strings.push("proceed");
       if (opts["Full Height"] === true)    strings.push("full-height");
 
