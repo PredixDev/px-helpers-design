@@ -28,6 +28,12 @@
 
 <!-- 2: Set Options -->
 <px-sass-doc-option
+  option-name="Text"
+  choose-with="input"
+  option-value="{{inputValue}}">
+</px-sass-doc-option>
+
+<px-sass-doc-option
   option-name="Align Text"
   choose-with="dropdown"
   choices='[
@@ -98,7 +104,7 @@
 <!-- 3: Make HTML Demo -->
 <section data-slot="demoHTML">
 
-  <div class$="{{cssClasses}}">Text</div>
+  <div class$="{{cssClasses}}">{{inputValue}}</div>
 
 </section>
 
