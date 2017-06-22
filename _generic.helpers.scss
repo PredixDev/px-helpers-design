@@ -214,3 +214,13 @@ a {
 .invisible {
   visibility: hidden !important;
 }
+
+/**
+ * Truncate text with an ellipsis
+ */
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

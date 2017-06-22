@@ -1,10 +1,8 @@
-v1.0.1
-==================
-* Bump sub dependencies
-
 v1.0.0
 ==================
-* Release the with the redesigned Predix UI color palette
+* Add truncate class
+* Bump sub dependencies
+* Release with the redesigned Predix UI color palette
 
 v0.3.20
 ==================
@@ -31,7 +29,7 @@ v0.3.15
 
 v0.3.14
 ==================
-* bumping sassdoc to propogate clipboard changes
+* bumping sassdoc to propagate clipboard changes
 
 v0.3.13
 ==================

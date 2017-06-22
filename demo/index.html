@@ -28,6 +28,12 @@
 
 <!-- 2: Set Options -->
 <px-sass-doc-option
+  option-name="Text"
+  choose-with="input"
+  option-value="{{inputValue}}">
+</px-sass-doc-option>
+
+<px-sass-doc-option
   option-name="Align Text"
   choose-with="dropdown"
   choices='[
@@ -71,25 +77,34 @@
 </px-sass-doc-option>
 <px-sass-doc-option
   option-name="Muted Text"
-  choose-with="boolean">
+  choose-with="boolean"
+  default-choice="false">
 </px-sass-doc-option>
 <px-sass-doc-option
   option-name="All Caps"
-  choose-with="boolean">
+  choose-with="boolean"
+  default-choice="false">
+</px-sass-doc-option>
+<px-sass-doc-option
+  option-name="Truncate"
+  choose-with="boolean"
+  default-choice="false">
 </px-sass-doc-option>
 <px-sass-doc-option
   option-name="Proceed"
-  choose-with="boolean">
+  choose-with="boolean"
+  default-choice="false">
 </px-sass-doc-option>
 <px-sass-doc-option
   option-name="Full Height"
-  choose-with="boolean">
+  choose-with="boolean"
+  default-choice="false">
 </px-sass-doc-option>
 
 <!-- 3: Make HTML Demo -->
 <section data-slot="demoHTML">
 
-  <div class$="{{cssClasses}}">Text</div>
+  <div class$="{{cssClasses}}">{{inputValue}}</div>
 
 </section>
 
@@ -104,7 +119,7 @@
 <section data-slot="intro">
 Only use a helper class if an element/component doesn’t already have a class to which you could apply this styling, e.g. if you need to float `.main-nav` left then add `float:left;` to that ruleset as opposed to adding the `.float--left` class to the markup.
 
-A lot of these classes carry `!important` as you will always want them to win out over other selectors.
+Many of these classes carry `!important` as you will always want them to win out over other selectors.
 </section>
 
 <!-- 5: Set Usage HTML -->
@@ -164,6 +179,9 @@ A lot of these classes carry `!important` as you will always want them to win ou
 <!-- Apply capital case to an element -->
 <div class="caps">...</div>
 
+<!-- Truncated Text: -->
+<!-- Truncate a text string using an ellipsis -->
+<div class="truncate">...</div>
 
 <!-- Proceed: -->
 <!-- Align items to the right where they imply progression/movement forward -->
@@ -223,6 +241,7 @@ A lot of these classes carry `!important` as you will always want them to win ou
 
       if (opts["Muted Text"] === true)    strings.push("muted");
       if (opts["All Caps"] === true)    strings.push("caps");
+      if (opts["Truncate"] === true)    strings.push("truncate");
       if (opts["Proceed"] === true)    strings.push("proceed");
       if (opts["Full Height"] === true)    strings.push("full-height");
 
