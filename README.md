@@ -1,11 +1,6 @@
-# Helpers
+# px-helpers-design
 
-A series of helper classes to use arbitrarily in Predix Experience.
-
-
-
-
-
+The px-helpers-design module consists of a variety of helper classes to use where needed in your Predix app.
 
 ## Dependencies
 
