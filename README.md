@@ -31,4 +31,4 @@ Only use a helper class if an element/component doesn’t already have a class t
 
 A lot of these classes carry `!important` as you will always want them to win out over other selectors.
 
-view the full API [here](http://predixdev.github.io/px-helpers-design/)
+View the full API [here](http://predixdev.github.io/px-helpers-design/)
