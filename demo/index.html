@@ -20,9 +20,7 @@
   layer="generic"
   sassdoc-path="sassdoc.json"
   dependencies='[
-    "https://github.com/PredixDev/px-colors-design",
-    "https://github.com/inuitcss/settings.responsive",
-    "https://github.com/inuitcss/tools.responsive"
+    "https://github.com/PredixDev/px-colors-design"
   ]'
   selected-options="{{selectedOptions}}">
 
@@ -120,37 +118,39 @@
 Only use a helper class if an element/component doesn’t already have a class to which you could apply this styling, e.g. if you need to float `.main-nav` left then add `float:left;` to that ruleset as opposed to adding the `.float--left` class to the markup.
 
 Many of these classes carry `!important` as you will always want them to win out over other selectors.
+
+This repository also contains mixins for responsive breakpoints and accessibility, please refer to the code for more information.
 </section>
 
 <!-- 5: Set Usage HTML -->
 <section data-slot="usage">
   ```
-<!-- Text Align Left: -->
+<!-- Text Align Left -->
 <div class="text--left">...</div>
 
 
-<!-- Text Align Center: -->
+<!-- Text Align Center -->
 <div class="text--center">...</div>
 
 
-<!-- Text Align Right: -->
+<!-- Text Align Right -->
 <div class="text--right">...</div>
 
 
-<!-- Float Left: -->
+<!-- Float Left -->
 <div class="float--left">...</div>
 
 
-<!-- Float Right: -->
+<!-- Float Right -->
 <div class="float--right">...</div>
 
 
-<!-- Informative: -->
+<!-- Informative -->
 <!-- Add a help cursor to any element that gives the user extra information on -->
 <div class="informative">...</div>
 
 
-<!-- Pointer: -->
+<!-- Pointer -->
 <!-- Add a pointer cursor to any element, useful for on-click events -->
 <div class="pointer">...</div>
 
@@ -167,29 +167,30 @@ Many of these classes carry `!important` as you will always want them to win out
 
 <!-- Visually Hidden -->
 <!-- Hide content off-screen without resorting to `display:none;` -->
-<div class="invisible">...</div>
+<!-- Useful for screen reader / accessibility use cases -->
+<div class="visuallyhidden">...</div>
 
 
-<!-- Muted Text: -->
+<!-- Muted Text -->
 <!-- Mute an object by reducing its opacity. -->
 <div class="muted">...</div>
 
 
-<!-- Capitalized Text: -->
+<!-- Capitalized Text -->
 <!-- Apply capital case to an element -->
 <div class="caps">...</div>
 
-<!-- Truncated Text: -->
+<!-- Truncated Text -->
 <!-- Truncate a text string using an ellipsis -->
 <div class="truncate">...</div>
 
-<!-- Proceed: -->
+<!-- Proceed -->
 <!-- Align items to the right where they imply progression/movement forward -->
 <div class="proceed">...</div>
 
 
 <!-- Full Height -->
-<!-- Hide content off-screen without resorting to `display:none;` -->
+<!-- Set hieght to 100% with !important -->
 <div class="full-height">...</div>
 
 ```
@@ -206,10 +207,11 @@ Many of these classes carry `!important` as you will always want them to win out
     is: 'local-element-demo',
 
     attached : function(){
-      var boundHandler = this._handleOptionsUpdated.bind(this); 
-      this.addEventListener('px-sass-doc-options-updated', boundHandler)
+      var boundHandler = this._handleOptionsUpdated.bind(this);
+      this.addEventListener('px-sass-doc-options-updated', boundHandler);
+      this.inputValue = "Text";
     },
-    
+
     detached : function(){
       this.removeEventListener('px-sass-doc-options-updated', boundHandler);
     },
