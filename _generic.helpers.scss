@@ -15,8 +15,53 @@
  */
 
 @import "px-colors-design/_settings.colors.scss";
-@import "inuit-responsive-settings/_settings.responsive.scss";
-@import "inuit-responsive-tools/_tools.responsive.scss";
+
+/// Default breakpoints for palm, lap, lap-and-up, portable, desk, and retina. Predefine this map to override.
+/// @group px-helpers-design:variables:style
+/// @type List [default]
+/// @todo n/a
+$breakpoints: (
+    "palm"          "screen and (max-width: 44.9375em)",
+    "lap"           "screen and (min-width: 45em) and (max-width: 63.9375em)",
+    "lap-and-up"    "screen and (min-width: 45em)",
+    "portable"      "screen and (max-width: 63.9375em)",
+    "desk"          "screen and (min-width: 64em)",
+    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
+) !default;
+
+/// @name media-query
+/// @output Generates whole media queries from the breakpoints defined above
+/// @example
+///   .foo {
+//      color: green;
+//      @include media-query(palm) {
+//        color: red;
+//      }
+//    }
+@mixin media-query($mq) {
+    $breakpoint-found: false;
+    // Loop through the list of breakpoints we’ve provided in our settings file.
+    @each $breakpoint in $breakpoints {
+        // Grab the alias and the condition from their respective locations in
+        // the list.
+        $alias:     nth($breakpoint, 1);
+        $condition: nth($breakpoint, 2);
+        // If the media query we’ve specified has an alias and a condition...
+        @if $mq == $alias and $condition {
+            // ...tell the mixin that we’ve found it...
+            $breakpoint-found: true;
+            // ...and spit it out here.
+            @media #{$condition} {
+                @content;
+            }
+        }
+    }
+    // If the user specifies a non-exitent alias, send them a warning.
+    @if $breakpoint-found == false{
+        @warn "Oops! Breakpoint ‘#{$mq}’ does not exist."
+    }
+}
+
 
 /// @name accessibility
 /// @output Properties and values for hiding elements accessibly
@@ -195,14 +240,12 @@ a {
   }
 }
 
-@if $inuit-responsive-settings {
-  @each $breakpoint in $breakpoints {
-    $alias: nth($breakpoint, 1);
-    @include media-query($alias) {
-      .a11y-#{$alias},
-      .visuallyhidden-#{$alias} {
-        @include accessibility;
-      }
+@each $breakpoint in $breakpoints {
+  $alias: nth($breakpoint, 1);
+  @include media-query($alias) {
+    .a11y-#{$alias},
+    .visuallyhidden-#{$alias} {
+      @include accessibility;
     }
   }
 }
