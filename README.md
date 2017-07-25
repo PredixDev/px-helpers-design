@@ -1,17 +1,17 @@
 # px-helpers-design
 
-The px-helpers-design module consists of a variety of helper classes to use where needed in your Predix app.
+The Predix UI Helpers module consists of a variety of helper classes to use where needed in your Predix app.
 
 ## Dependencies
 
-Px's Helpers module depends on one other Px and one other inuitcss modules:
+The `px-helpers-design` module depends on one other Px module and one other inuitcss module:
 
 * [tools.responsive](https://github.com/inuitcss/tools.responsive)
 * [px-functions-design](https://github.com/PredixDev/px-functions-design)
 
 ## Upstream dependency
 
-The Helpers module is also an upstream dependency in this meta kit:
+The `px-helpers-design` module is also an upstream dependency in this meta kit:
 
 * [px-starter-kit-design](https://github.com/PredixDev/px-starter-kit-design)
 
@@ -31,4 +31,4 @@ Only use a helper class if an element/component doesn’t already have a class t
 
 A lot of these classes carry `!important` as you will always want them to win out over other selectors.
 
-View the full API [here](http://predixdev.github.io/px-helpers-design/)
+View the full API [here](http://predixdev.github.io/px-helpers-design/).
