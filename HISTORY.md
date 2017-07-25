@@ -1,3 +1,7 @@
+v1.0.1
+==================
+* make demo of truncate clearer
+
 v1.0.0
 ==================
 * Add truncate class
