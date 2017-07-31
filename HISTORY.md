@@ -1,3 +1,7 @@
+v1.0.2
+==================
+* update ghp script
+
 v1.0.1
 ==================
 * make demo of truncate clearer
