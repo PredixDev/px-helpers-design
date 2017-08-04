@@ -8,7 +8,7 @@
 <link rel="import" href="../css/px-helpers-design-demo-styles.html" />
 
 <!-- Demo DOM module -->
-<dom-module id="local-element-demo">
+<dom-module id="px-helpers-design-demo">
   <template>
     <!-- 0: Import the styles-->
     <style include="px-helpers-design-demo-styles" is="custom-style"></style>
@@ -204,7 +204,7 @@ This repository also contains mixins for responsive breakpoints and accessibilit
 <!-- 6: Handle selectedOptions, update demo -->
 <script>
   Polymer({
-    is: 'local-element-demo',
+    is: 'px-helpers-design-demo',
 
     attached : function(){
       var boundHandler = this._handleOptionsUpdated.bind(this);
