@@ -1,3 +1,7 @@
+v1.0.6
+==================
+* fix palm-and-up breakpoint
+
 v1.0.5
 ==================
 * un-separate concerns

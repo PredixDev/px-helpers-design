@@ -27,7 +27,7 @@ $breakpoints: (
     "portable"         "screen and (max-width: 63.9375em)",
     "desk"             "screen and (min-width: 64em)",
     // recommended
-    "palm-and-up"      "screen and (min-width: 44.9375em)",
+    "palm-and-up"      "screen and (min-width: 0)",
     "lap-and-up"       "screen and (min-width: 45em)",
     "portable-and-up"  "screen and (min-width: 63.9375em)",
     "desk-and-up"      "screen and (min-width: 64em)",
@@ -92,7 +92,6 @@ $breakpoints: (
   padding: 0 !important;
   clip: rect(0 0 0 0) !important;
 }
-
 
 /* Links
    ========================================================================== */
