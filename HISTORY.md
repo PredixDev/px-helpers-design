@@ -1,3 +1,7 @@
+v1.0.4
+==================
+* add *-and-up sizing (#3), separate concerns
+
 v1.0.3
 ==================
 * runtime theming for demo
