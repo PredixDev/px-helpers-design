@@ -22,15 +22,15 @@
 /// @todo n/a
 $breakpoints: (
     // backwards compatible
-    "palm"             "screen and (max-width: 44.9375em)",
-    "lap"              "screen and (min-width: 45em) and (max-width: 63.9375em)",
-    "portable"         "screen and (max-width: 63.9375em)",
-    "desk"             "screen and (min-width: 64em)",
+    "lap"              "screen and (min-width: 45em) and (max-width: 63.9375em)", // 675 - 960
+    "portable"         "screen and (max-width: 63.9375em)", // < 960
+    "desk"             "screen and (min-width: 64em)", // > 960
+
     // recommended
-    "palm-and-up"      "screen and (min-width: 0)",
-    "lap-and-up"       "screen and (min-width: 45em)",
-    "portable-and-up"  "screen and (min-width: 63.9375em)",
-    "desk-and-up"      "screen and (min-width: 64em)",
+    "palm"             "screen and (max-width: 44.9375em)", // < 675
+    "lap-and-up"       "screen and (min-width: 45em)", // > 675
+    "desk-and-up"      "screen and (min-width: 64em)", // > 960
+    "large-and-up"     "screen and (min-width: 120em)", // > 1800
     "retina"           "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
 ) !default;
 // @NOTE: The desk-and-up breakpoint is the same as desk, but is useful to keep
@@ -92,6 +92,7 @@ $breakpoints: (
   padding: 0 !important;
   clip: rect(0 0 0 0) !important;
 }
+
 
 /* Links
    ========================================================================== */

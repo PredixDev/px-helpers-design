@@ -1,3 +1,7 @@
+v1.0.7
+==================
+* update breakpoints
+
 v1.0.6
 ==================
 * fix palm-and-up breakpoint
