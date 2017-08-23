@@ -1,3 +1,7 @@
+v1.0.5
+==================
+* un-separate concerns
+
 v1.0.4
 ==================
 * add *-and-up sizing (#3), separate concerns
