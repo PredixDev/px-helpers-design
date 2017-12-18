@@ -1,3 +1,7 @@
+v1.0.8
+==================
+* Upgrade docs to use Polymer 2.x, bump px-demo and px-sass-doc dependencies
+
 v1.0.7
 ==================
 * update breakpoints
